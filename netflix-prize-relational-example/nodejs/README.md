@@ -18,7 +18,7 @@ The reusable DAL code itself is in _netflix-dal.mjs_. Similarly to the Python ex
 
 So, running _add-movie.mjs_ for a database server on your local machine would look like this:
 
-    DB_URL=postgres://localhost/postgres node add-movie.mjs "Bill & Ted Face the Music" 2020
+    DB_URL=postgresql://localhost/postgres node add-movie.mjs "Bill & Ted Face the Music" 2020
 
 Note the use of double-quotes to delimit the first title argument so that the title’s spaces don’t break that argument into multiple ones. Double-quotes also help with symbols that have other meanings on the command line, such as the `&`. The I/O redirection symbols `<`, `>`, `|`, etc. also belong to this category.
 
