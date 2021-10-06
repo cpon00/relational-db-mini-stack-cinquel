@@ -36,6 +36,6 @@ The reusable DAL code itself is in _netflix_dal.py_. It has four sample DAL func
 
 So, running _ratings_by_viewer.py_ for a database server on your local machine would look like this:
 
-    DB_URL=postgres://localhost/postgres python3 ratings_by_viewer.py 83
+    DB_URL=postgresql://localhost/postgres python3 ratings_by_viewer.py 83
 
 The programs all include some rudimentary error checking and handling—the patterns for implementing these should be pretty well-ingrained by now, but if anything needs further exposition please don’t hesitate to ask.
