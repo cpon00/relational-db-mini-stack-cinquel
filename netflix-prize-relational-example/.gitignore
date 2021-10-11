@@ -7,4 +7,7 @@ ratings.csv
 __pycache__/
 env/
 node_modules/
-
+combined_data_1.txt
+combined_data_2.txt
+combined_data_3.txt
+combined_data_4.txt
