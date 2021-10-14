@@ -12,10 +12,10 @@ directly into a database command line utility such as `psql`.
 
 # For simplicity, we assume that the program runs where the files are located.
 RATING_SOURCES = [
-    'combined_data_1.txt',
-    'combined_data_2.txt',
-    'combined_data_3.txt',
-    'combined_data_4.txt'
+    #'combined_data_1.txt',
+    #'combined_data_2.txt',
+    #'combined_data_3.txt',
+    #'combined_data_4.txt'
 ]
 
 # The all-important pattern indicating the current movie.
@@ -42,6 +42,9 @@ for ratings_file in RATING_SOURCES:
                 rating = int(row[1])
                 rating_date = row[2]
                 print(f'{current_movie_id}\t{viewer_id}\t{rating}\t{rating_date}')
+    #print('COPY rating(movie_id, viewer_id, rating, date_rated) FROM STDIN;')
+
+    
 
 # All done---the \. sequence indicates this.
 print('\\.')

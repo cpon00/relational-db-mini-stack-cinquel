@@ -12,14 +12,14 @@ directly into a database command line utility such as `psql`.
 
 # For simplicity, we assume that the program runs where the files are located.
 RATING_SOURCES = [
-    'combined_data_1.txt',
-    'combined_data_2.txt',
-    'combined_data_3.txt',
-    'combined_data_4.txt'
+    # "combined_data_1.txt",
+    # "combined_data_2.txt",
+    # "combined_data_3.txt",
+    "combined_data_4.txt"
 ]
 
 # The all-important pattern indicating the current movie.
-MOVIE_LINE_PATTERN = '^(\d+):$'
+MOVIE_LINE_PATTERN = "^(\d+):$"
 MOVIE_LINE = re.compile(MOVIE_LINE_PATTERN)
 
 current_movie_id = None
@@ -27,11 +27,12 @@ current_movie_id = None
 # The INSERT approach is best used with a transaction. An introductory definition:
 # instead of “saving” (committing) after every statement, a transaction waits on a
 # commit until we issue the `COMMIT` command.
-print('BEGIN;')
+print("BEGIN;")
 
 # Read the files line by line and write them out as INSERT statements along with the current movie ID.
+rating_values = {}
 for ratings_file in RATING_SOURCES:
-    with open(ratings_file, 'r+') as f:
+    with open(ratings_file, "r+") as f:
         reader = csv.reader(f)
         for row in reader:
             movie_match = MOVIE_LINE.match(row[0])
@@ -43,8 +44,13 @@ for ratings_file in RATING_SOURCES:
                 viewer_id = int(row[0])
                 rating = int(row[1])
                 rating_date = row[2]
-                print(f'INSERT INTO rating VALUES({current_movie_id}, {viewer_id}, {rating}, \'{rating_date}\');')
+                rating_values[viewer_id] = (current_movie_id, rating, rating_date)
+
+for viewer in rating_values.keys():
+    print(
+        f"INSERT INTO rating VALUES({rating_values[viewer][0]}, {viewer}, {rating_values[viewer][1]}, '{rating_values[viewer][2]}');"
+    )
 
 
 # _Now_ we can commit our transation.
-print('COMMIT;')
+print("COMMIT;")
