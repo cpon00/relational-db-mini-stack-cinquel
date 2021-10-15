@@ -4,11 +4,11 @@
 
 ## What the dataset contains:
 
-This dataset contains data from about 5000 well known American movies.
+This dataset contains data from about 5000 well known American movies, with unique json values for each specific movie.
 
 ## What applications would find the dataset useful?
 
-Applications that might find this dataset useful could be film review sites that need to list movies organized by a particular genre, cast member, producer, director, year, etc.
+Applications that might find this dataset useful could be film review sites that need to list movies organized by a particular genre, cast member, producer, director, year, etc. We may even be able to predict which films may be highly rated in the future, given the popularity score, and revenue.
 
 ## What kinds of questions might such applications ask of this dataset?
 
