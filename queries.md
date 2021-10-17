@@ -55,3 +55,11 @@ SELECT movie.title, COUNT(moviekeyword.keyword_id) FROM movie INNER JOIN movieke
 _uses inner join_
 
 <center><img src="./images/q6.png" style="width: 90%" ></img></center>
+
+7. All of the keywords attributed to movies with a voter average of 8.5 and up sorted by title.
+
+```sql
+SELECT movie.title, keyword.keyword_name FROM movie, moviekeyword, keyword WHERE movie.id=moviekeyword.movie_id AND moviekeyword.keyword_id=keyword.keyword_id AND movie.vote_average>= 8.5 ORDER BY movie.title;
+```
+
+<center><img src="./images/q7.png" style="width: 90%" ></img></center>
