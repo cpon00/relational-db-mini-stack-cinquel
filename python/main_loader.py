@@ -18,14 +18,13 @@ def formatter(path):
 movies = formatter("./tmdb_5000_movies.csv")
 
 for (id, original_language, title, popularity, release_date, runtime, vote_average, vote_count) in zip(movies.id, movies.original_language, movies.title, movies.popularity, movies.release_date, movies.runtime, movies.vote_average, movies.vote_count):
-    runtime = int(float(runtime)) if runtime else 0
     id = int(float(id)) if id != '' else None
     if not id:
         continue
     vote_count = int(float(vote_count))
     title = title.replace("'", "''")
     print(
-        f'INSERT INTO movie VALUES({id}, \'{original_language}\', \'{title}\', {popularity}, \'{release_date}\', {runtime}, {vote_average}, {vote_count});')
+        f'INSERT INTO movie VALUES({id}, \'{original_language}\', \'{title}\', {popularity}, \'{release_date}\', {vote_average}, {vote_count});')
 
 genre_dict = {}
 for genres in movies.genres:
@@ -34,7 +33,7 @@ for genres in movies.genres:
         genre_name = item['name']
         genre_dict[genre_id] = genre_name
 
-for key, value in genre_dict.items():
+for (key, value) in genre_dict.items():
     print(f'INSERT INTO genre VALUES({key}, \'{value}\');')
 
 for (id, genres) in zip(movies.id, movies.genres):

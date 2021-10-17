@@ -4,7 +4,6 @@ CREATE TABLE movie (
   title             VARCHAR,
   popularity        DOUBLE PRECISION,
   release_date      DATE,
-  runtime           INT,
   vote_average      DOUBLE PRECISION,
   vote_count        INT
 );

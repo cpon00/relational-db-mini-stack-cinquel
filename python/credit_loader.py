@@ -26,13 +26,9 @@ for (key, value) in actors.items():
     print(
         f'INSERT INTO actor VALUES({key},\'{value}\');')
 
-    # actor_id = cast[i]['id']
-    # cast_id = cast[i]['cast_id']
-    # character_name = cast[i]['character']
-    # order = cast[i]['order']
-
 
 for (movie_id, cast) in zip(credits.movie_id, credits.cast):
+    # wanted to curtail entries in table as there are only a few relevant/main characters/actors for our purposes
     end = 2 if len(cast) > 3 else len(cast)
     for character in cast:
         actor_id = character['id']
