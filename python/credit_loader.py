@@ -14,7 +14,33 @@ def formatter(path):
 
 credits = formatter("./tmdb_5000_credits.csv")
 
-for (item) in credits.cast:
-    end = 1 if len(item) >= 3 else len(item)
-    for i in range(0, end):
-        print(item[i]['name'], item[i]['character'])
+actors = {}
+for cast in credits.cast:
+    end = 2 if len(cast) > 3 else len(cast)
+    for character in cast:
+        actor_id = character['id']
+        name = character['name'].replace("'", "''")
+        actors[actor_id] = name
+
+for (key, value) in actors.items():
+    print(
+        f'INSERT INTO actor VALUES({key},\'{value}\');')
+
+    # actor_id = cast[i]['id']
+    # cast_id = cast[i]['cast_id']
+    # character_name = cast[i]['character']
+    # order = cast[i]['order']
+
+
+for (movie_id, cast) in zip(credits.movie_id, credits.cast):
+    end = 2 if len(cast) > 3 else len(cast)
+    for character in cast:
+        actor_id = character['id']
+        character_name = character['character'].replace("'", "''")
+        gender = character['gender']
+        order = character['order']
+        if order > end:
+            break
+        else:
+            print(
+                f'INSERT INTO character VALUES({movie_id},{actor_id},\'{character_name}\', {gender}, {order});')

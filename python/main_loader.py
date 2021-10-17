@@ -18,7 +18,7 @@ def formatter(path):
 movies = formatter("./tmdb_5000_movies.csv")
 
 for (id, original_language, title, popularity, release_date, runtime, vote_average, vote_count) in zip(movies.id, movies.original_language, movies.title, movies.popularity, movies.release_date, movies.runtime, movies.vote_average, movies.vote_count):
-    runtime = int(float(runtime)) if not runtime else 0
+    runtime = int(float(runtime)) if runtime else 0
     id = int(float(id)) if id != '' else None
     if not id:
         continue
