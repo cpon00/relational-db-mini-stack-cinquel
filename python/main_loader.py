@@ -1,7 +1,5 @@
 import json
 import pandas as pd
-import csv
-import sys
 
 
 def formatter(path):
@@ -57,5 +55,3 @@ for (id, keywords) in zip(movies.id, movies.keywords):
     for kw in keywords:
         kw_id = kw['id']
         print(f'INSERT INTO moviekeyword VALUES({id}, {kw_id});')
-
-print('COMMIT;')
