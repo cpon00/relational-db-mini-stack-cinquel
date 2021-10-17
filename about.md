@@ -12,4 +12,49 @@ Applications that might find this dataset useful could be film review sites that
 
 ## What kinds of questions might such applications ask of this dataset?
 
-Our datasets could answer questions such as, "How many movies are about pirates?" or "How many movie titles contain the word 'dog'? Given a wide variety of questions, our application will return accurate results to the user.
+Our datasets could answer questions such as, "How many movies are about pirates?" or "How many movie titles contain the word 'dog' that are in the action genre? Given a wide variety of questions, our application will return accurate results to the user.
+
+# Tables
+
+- movie
+
+  - id
+  - original language
+  - title
+  - popularity
+  - release_date
+  - vote_average
+  - vote_count
+
+- moviegenre
+
+  - movie_id
+  - genre_id
+
+- genre
+
+  - genre_id
+  - genre_name
+
+- character
+
+  - movie_id
+  - actor_id
+  - character_name
+  - gender
+  - char_order
+
+- actor
+
+  - actor_id
+  - name
+
+- moviekeyword
+
+  - movie_id
+  - keyword_id
+
+- keyword
+
+  - keyword_id
+  - keyword_name
