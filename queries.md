@@ -3,7 +3,7 @@
 1. The title, character name, and actor name of all the movies Michael Cera is in within our dataset.
 
 ```sql
-SELECT movie.title, character.character_name, actor.name FROM movie,character,actor WHERE movie_id = character.movie_id AND character.actor_id = actor.actor_id AND actor.name ILIKE '%Michael Cera%';
+SELECT movie.title, character.character_name, actor.name FROM movie, character, actor WHERE movie.id = character.movie_id AND character.actor_id = actor.actor_id AND actor.name ILIKE '%Michael Cera%';
 ```
 
 <center><img src="./images/q1.png" style="width: 90%" ></img></center>
