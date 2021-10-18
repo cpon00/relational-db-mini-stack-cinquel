@@ -58,3 +58,13 @@ Our datasets could answer questions such as, "How many movies are about pirates?
 
   - keyword_id
   - keyword_name
+
+Our datasets could answer questions such as, "How many movies are about pirates?" or "How many movie titles contain the word 'dog'? Given a wide variety of questions, our application will return accurate results to the user.
+
+## Instructions
+
+1.  Ensure you have proper modules installed.
+2.  Initialize database, then load schema.
+3.  Run main_loader.py. This will populate tables `movie`, `genre`, `moviegenre`, `keyword`, and `moviekeyword`.
+4.  Run credit_loader.py. This will populate tables `actor` and `character`.
+5.  Run queries!

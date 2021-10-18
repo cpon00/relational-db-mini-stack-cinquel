@@ -27,8 +27,7 @@ CREATE TABLE character (
   movie_id       INT REFERENCES movie(id),
   actor_id       INT REFERENCES actor(actor_id),
   character_name VARCHAR,
-  gender         INT,
-  char_order     INT
+  gender         INT
 );
 
 CREATE TABLE keyword (

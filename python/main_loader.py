@@ -24,6 +24,8 @@ for (id, original_language, title, popularity, release_date, runtime, vote_avera
     print(
         f'INSERT INTO movie VALUES({id}, \'{original_language}\', \'{title}\', {popularity}, \'{release_date}\', {vote_average}, {vote_count});')
 
+print('SELECT setval(\'movie_id_seq\', (SELECT MAX(id) from movie));')
+
 genre_dict = {}
 for genres in movies.genres:
     for item in genres:

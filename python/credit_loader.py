@@ -37,4 +37,4 @@ for (movie_id, cast) in zip(credits.movie_id, credits.cast):
             break
         else:
             print(
-                f'INSERT INTO character VALUES({movie_id},{actor_id},\'{character_name}\', {gender}, {order});')
+                f'INSERT INTO character VALUES({movie_id},{actor_id},\'{character_name}\', {gender});')
